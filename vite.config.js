@@ -5,7 +5,7 @@ import tailwind from "tailwindcss";
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [react()],
-    base: "/beauty-salon-app",
+    base: "https://juanmorenae.github.io/beauty-salon-app",
     css: {
         postcss: {
             plugins: [tailwind()],
