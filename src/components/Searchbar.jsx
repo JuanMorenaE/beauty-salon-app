@@ -1,11 +1,12 @@
-import {useState} from "react";
+import { useState } from "react";
 
-import {FaStar} from "react-icons/fa";
-import {FaLocationDot} from "react-icons/fa6";
-import {IoArrowBack} from "react-icons/io5";
-import {IoClose} from "react-icons/io5";
+import { FaStar } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { IoArrowBack } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
+import { IoIosSearch } from "react-icons/io";
 
-function Header() {
+function Searchbar() {
     const [formState, setFormState] = useState({
         searchbar: "",
     });
@@ -33,9 +34,18 @@ function Header() {
     };
 
     return (
-        <div className={(!formState.searchbar ? "h-auto sticky " : "h-full fixed") + "  top-0 w-full bg-white rounded-b-2xl"}>
+        <div className={(!formState.searchbar ? "h-auto sticky " : "h-full fixed") + "  top-0 max-w-screen-2xl w-full mx-auto bg-white rounded-b-2xl"}>
             <header className="p-4 gap-4 flex items-center">
                 <div className="w-full relative">
+                    <span
+                        className={
+                            (!formState.searchbar ? "block" : "hidden") +
+                            " flex justify-center items-center w-10 h-full text-gray-700 text-2xl absolute cursor-pointer"
+                        }
+                    >
+                        <IoIosSearch />
+                    </span>
+
                     <button
                         onClick={closeSearchbar}
                         className={
@@ -59,10 +69,9 @@ function Header() {
                         onChange={handleSearchbarChange}
                         id="searchbar"
                         className={
-                            (!formState.searchbar ? "" : "pl-10") +
-                            " peer text-sm border border-gray-100 bg-gray-50 outline-none p-4 rounded-lg w-full"
+                            "pl-10 peer text-sm border border-gray-100 bg-gray-50 outline-none p-4 rounded-lg w-full"
                         }
-                        placeholder="Search..."
+                        placeholder="Buscar Salones, Categorias, Servicios, ..."
                     />
                 </div>
             </header>
@@ -174,4 +183,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default Searchbar;

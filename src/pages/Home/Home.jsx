@@ -17,7 +17,7 @@ function Home() {
                 <Offers />
                 <Salons />
             </div>
-            <Navbar />
+            <Navbar selected="HOME" />
         </main>
     );
 }
